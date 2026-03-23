@@ -1,0 +1,14 @@
+{
+  "name": "crownmind-community",
+  "version": "1.0.0",
+  "description": "CrownMind Community Platform",
+  "main": "index.js",
+  "scripts": {
+    "dev": "serve"
+  },
+  "author": "Elyon",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^14.2.6"
+  }
+}
