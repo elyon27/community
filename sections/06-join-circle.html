@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>06 Join-Circle | CrownMind Community</title>
+  <link rel="stylesheet" href="../assets/css/community.css" />
+
+  <style>
+    .page-shell {
+      min-height: calc(100vh - 90px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .join-wrap {
+      width: 100%;
+      max-width: 820px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .join-panel {
+      width: 100%;
+      padding: 32px;
+      border-radius: 28px;
+    }
+
+    .join-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .join-form .input,
+    .join-form .select,
+    .join-form .textarea {
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .join-form .textarea {
+      min-height: 140px;
+    }
+
+    .join-form .primary-btn {
+      width: auto;
+      min-width: 260px;
+      padding: 14px 34px;
+      align-self: center;
+      text-align: center;
+    }
+
+    .join-heading,
+    .join-panel .eyebrow {
+      text-align: left;
+    }
+
+    @media (max-width: 768px) {
+      .join-panel {
+        padding: 24px 18px;
+      }
+
+      .join-form .input,
+      .join-form .select,
+      .join-form .textarea {
+        max-width: 100%;
+      }
+
+      .join-form .primary-btn {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="/index.html" aria-label="CrownMind Institute Home">
+        <div class="brand-mark">CM</div>
+        <div class="brand-text">
+          <strong>CrownMind Institute</strong>
+          <span>Community of reflection, growth, and aligned minds</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="02-hero.html">Home</a>
+        <a href="https://crown-articles.netlify.app/">Articles</a>
+        <a href="/scrolls.html">Scrolls</a>
+        <a href="#community-feed">The Circle</a>
+        <a href="#join-circle">Join</a>
+        <a class="primary-btn" href="https://crownmind.netlify.app/">Return To CrownMind</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <div class="join-wrap">
+      <section class="panel join-panel" id="join-circle">
+        <div class="eyebrow">Membership Gateway</div>
+        <h3 class="join-heading" style="margin-top:10px;">Join the CrownMind Circle</h3>
+
+        <form class="join-form" name="crownmind-community" method="POST" data-netlify="true">
+          <input class="input" type="text" name="name" placeholder="Your name" required />
+          <input class="input" type="email" name="email" placeholder="Your email" required />
+
+          <select class="select" name="path">
+            <option value="">Choose your path</option>
+            <option>Seeker</option>
+            <option>Walker</option>
+            <option>Watcher</option>
+            <option>Builder</option>
+            <option>Aligned</option>
+            <option>Teacher</option>
+          </select>
+
+          <textarea class="textarea" name="intention" placeholder="What brings you into the CrownMind community?"></textarea>
+
+          <button class="primary-btn" type="submit">Enter the Circle</button>
+        </form>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>05 Reflection Studio | CrownMind Community</title>
+  <link rel="stylesheet" href="../assets/css/community.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="section" id="reflection-studio">
+      <div class="container">
+        <div class="eyebrow">Section 05</div>
+        <h2 class="page-title">Reflection Studio / Composer</h2>
+        <p class="lead" style="margin-top:14px; line-height:1.8; max-width:72ch;">
+          This file isolates post creation preview behavior. It is the best section to connect first when you are ready for database writes.
+        </p>
+      </div>
+      <div class="container layout-grid" style="margin-top:22px;">
+        <section class="panel">
+          <div class="section-head" style="margin-bottom:12px;">
+            <div>
+              <div class="eyebrow">Reflection Studio</div>
+              <h2 class="section-title">Write into the community</h2>
+              <p>Use this composer as the front-end shell for future posting into your database or moderation workflow.</p>
+            </div>
+          </div>
+          <form class="compose-form" id="composeForm">
+            <input class="input" id="postTitle" type="text" placeholder="Title of your reflection or question" required />
+            <div class="layout-grid" style="grid-template-columns: 1fr 1fr; gap: 12px;">
+              <select class="select" id="postCategory" required>
+                <option value="reflection">Reflection</option>
+                <option value="question">Discernment Question</option>
+                <option value="growth">Growth Log</option>
+                <option value="scroll">Scroll Thread</option>
+              </select>
+              <input class="input" id="postTags" type="text" placeholder="Tags, separated by commas" />
+            </div>
+            <textarea class="textarea" id="postBody" placeholder="Write your thoughts here..." required></textarea>
+            <div class="action-row" style="border-top:0; padding-top:0; margin-top:0;">
+              <button class="primary-btn" type="submit">Publish Preview</button>
+              <button class="ghost-btn" type="reset">Clear</button>
+            </div>
+          </form>
+        </section>
+        <aside class="panel" id="integration-notes">
+          <div class="eyebrow">Integration Notes</div>
+          <h3 style="margin-top:10px;">Backend-ready structure</h3>
+          <ul class="mini-list">
+            <li><div><strong>Form capture</strong><small>Connect the join form to Netlify Forms, Formspree, or Supabase Edge Functions.</small></div></li>
+            <li><div><strong>Community data</strong><small>Replace demo posts with data from <code>/api/community/posts</code>.</small></div></li>
+            <li><div><strong>Authentication</strong><small>Use Supabase Auth, Clerk, Firebase Auth, or your custom JWT login flow.</small></div></li>
+            <li><div><strong>Moderation</strong><small>Add approval states such as draft, pending, published, archived, and featured.</small></div></li>
+          </ul>
+        </aside>
+      </div>
+      <div class="container">
+        <div class="code-note">Note: this standalone file includes the shared JavaScript, but preview posting needs a visible <code>#postStack</code> on the same page to prepend into a live feed. In your production build, pair this composer with the feed section or send data to a real endpoint.</div>
+      </div>
+    </section>
+  <script src="../assets/js/community.js"></script>
+  </main>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrownMind Institute | Community</title>
+  <meta name="description" content="Enter the CrownMind Community — a sanctuary for reflection, discussion, growth logs, and aligned fellowship." />
+  <link rel="stylesheet" href="assets/css/community.css" />
+</head>
+<body>
+
+  <div id="header"></div> 
+  <div id="hero"></div>
+  <div id="architecture">
+  <div id="footer"></div>
+
+  <script>
+    const components = {
+      hero: "/sections/02-hero.html",
+      architecture: "/sections/03-architecture.html"
+
+    };
+
+    Object.entries(components).forEach(([id, file]) => {
+      fetch(file)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(id).innerHTML = html;
+        });
+    });
+  </script>
+
+</body>

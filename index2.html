@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrownMind Institute | Community</title>
+  <meta name="description" content="Enter the CrownMind Community — a sanctuary for reflection, discussion, growth logs, and aligned fellowship." />
+  <link rel="stylesheet" href="assets/css/community.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="/index.html" aria-label="CrownMind Institute Home">
+        <div class="brand-mark">CM</div>
+        <div class="brand-text">
+          <strong>CrownMind Institute</strong>
+          <span>Community of reflection, growth, and aligned minds</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="sections/02-hero.html">Home</a>
+        <a href="https://crown-articles.netlify.app/">Articles</a>
+        <a href="/scrolls.html">Scrolls</a>
+        <a href="#community-feed">The Circle</a>
+        <a href="#join-circle">Join</a>
+        <a class="primary-btn" href="https://crownmind.netlify.app/">Return To CrownMind</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <script>
+      loadComponent("hero", "sections/02-hero.html");
+      async function loadComponent(id, file) {
+        const res = await fetch(file);
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+      }
+    </script>
+
+    <section class="hero" id="community-hero">
+      <div class="container hero-grid">
+
+        <article class="hero-card">
+          <div class="eyebrow">✦ CrownMind Community Portal</div>
+          <h1>Gather aligned minds into one living sanctuary.</h1>
+          <p class="hero-sub">
+            This is the digital heart of CrownMind Institute — a place for reflections, thoughtful discussion,
+            growth logs, scroll conversations, and a deeper fellowship built on truth, discernment, and inner                  alignment.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-btn" href="sections/04-community-feed.html">Join the Circle</a>
+            <a class="ghost-btn" href="sections/04-community-feed.html">Explore the Feed</a>
+            <a class="ghost-btn" href="sections/05-reflection-studio.html">Write a Reflection</a>
+          </div>
+
+          <div class="hero-stats" aria-label="Community Highlights">
+            <div class="stats-card">
+              <strong>4 Spaces</strong>
+              <span>Reflection, discussion, growth, and sacred silence</span>
+            </div>
+            <div class="stats-card">
+              <strong>5 Roles</strong>
+              <span>From Seeker to Teacher, with meaningful progression</span>
+            </div>
+            <div class="stats-card">
+              <strong>1 Mission</strong>
+              <span>To cultivate transformed minds and aligned lives</span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="hero-side">
+          <section class="quote-card">
+            <div class="eyebrow">Daily Charge</div>
+            <blockquote>
+              “A true community is not noise gathered in one place. It is a fellowship of souls learning how to                   see clearly, stand truthfully, and grow without pretending.”
+            </blockquote>
+            <footer>— CrownMind Community Ethos</footer>
+          </section>
+
+          <section class="profile-card">
+            <div class="profile-top">
+              <div>
+                <div class="eyebrow">Living Circle</div>
+                <h3 style="margin-top:10px;">Today in the community</h3>
+              </div>
+              <span class="status">Active</span>
+            </div>
+
+            <div class="member-row">
+              <div class="avatar">W</div>
+              <div class="member-meta">
+                <strong>Watcher’s Reflection</strong>
+                <span>New insight posted in The Discernment thread</span>
+              </div>
+            </div>
+            <div class="member-row">
+              <div class="avatar">A</div>
+              <div class="member-meta">
+                <strong>Alignment Log</strong>
+                <span>7 members recorded their weekly growth notes</span>
+              </div>
+            </div>
+            <div class="member-row">
+              <div class="avatar">S</div>
+              <div class="member-meta">
+                <strong>Silent Room</strong>
+                <span>A quiet reading prompt has been opened for contemplation</span>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="community-architecture">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Community Architecture</div>
+            <h2 class="section-title">How CrownMind Community is structured</h2>
+            <p>
+              Designed as a sanctuary rather than a noisy social feed, this interface gives visitors a clear path               into reflection,
+              participation, growth, and deeper belonging.
+            </p>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">✍</div>
+            <h3>Reflections</h3>
+            <p>Members respond to articles, scrolls, and prompts with thoughtful written reflections that deepen                the message.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">◎</div>
+            <h3>The Circle</h3>
+            <p>A focused discussion feed where members share insights, ask discerning questions, and respond                meaningfully.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⬡</div>
+            <h3>Growth Logs</h3>
+            <p>Visitors can track inner work, breakthroughs, struggles, and disciplines through guided logs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="community-feed">
+      <div class="container layout-grid">
+        <div>
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">The Circle</div>
+              <h2 class="section-title">Community feed and reflections</h2>
+              <p>
+                The feed below is front-end ready and interactive. It can later be connected to your backend API,                 Netlify Forms,
+                Supabase, Firebase, or a custom database.
+              </p>
+            </div>
+          </div>
+
+          <div class="filter-row" style="margin-bottom: 16px;">
+            <button class="pill-btn active" data-filter="all">All</button>
+            <button class="pill-btn" data-filter="reflection">Reflections</button>
+            <button class="pill-btn" data-filter="question">Discernment Questions</button>
+            <button class="pill-btn" data-filter="growth">Growth Logs</button>
+            <button class="pill-btn" data-filter="scroll">Scroll Threads</button>
+          </div>
+<!--
+          <div class="post-stack" id="postStack">
+            <article class="post-card" data-category="reflection">
+              <div class="post-head">
+                <div class="post-user">
+                  <div class="avatar">E</div>
+                  <div>
+                    <strong>Elyon the Watcher</strong>
+                    <span>Founder Reflection · Inner Alignment</span>
+                  </div>
+                </div>
+                <div class="post-date">2 hours ago</div>
+              </div>
+              <p class="post-body">
+                Today I am reflecting on how true freedom is not lawlessness but ordered alignment. The deeper I                   listen, the more I see that discipline is not a cage — it is a gate. I want CrownMind to be a                      place where people do not only consume words, but return with transformed sight.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Reflection</span>
+                <span class="tag">Freedom</span>
+                <span class="tag">Inner Alignment</span>
+              </div>
+              <div class="action-row">
+                <button class="pill-btn like-btn">♡ Appreciate <span>12</span></button>
+                <button class="pill-btn">Comment</button>
+                <button class="pill-btn">Save</button>
+              </div>
+            </article>
+
+            <article class="post-card" data-category="question">
+              <div class="post-head">
+                <div class="post-user">
+                  <div class="avatar">M</div>
+                  <div>
+                    <strong>Maria, Seeker</strong>
+                    <span>Discernment Question</span>
+                  </div>
+                </div>
+                <div class="post-date">5 hours ago</div>
+              </div>
+              <p class="post-body">
+                How do we know whether isolation is preparing us or merely draining us? I have felt both silence                 and heaviness lately.
+                I would like insight from those who have learned to distinguish solitude from discouragement.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Question</span>
+                <span class="tag">Discernment</span>
+                <span class="tag">Solitude</span>
+              </div>
+              <div class="action-row">
+                <button class="pill-btn like-btn">♡ Appreciate <span>8</span></button>
+                <button class="pill-btn">Reply</button>
+                <button class="pill-btn">Share to Thread</button>
+              </div>
+            </article>
+
+            <article class="post-card" data-category="growth">
+              <div class="post-head">
+                <div class="post-user">
+                  <div class="avatar">J</div>
+                  <div>
+                    <strong>Jon, Walker</strong>
+                    <span>Growth Log · Week 03</span>
+                  </div>
+                </div>
+                <div class="post-date">Yesterday</div>
+              </div>
+              <p class="post-body">
+                This week I practiced restraint in speech and spent time journaling after reading “The Kingdom                 Within.”
+                My biggest challenge was returning to clarity after emotional frustration, but I noticed I                         recovered faster than before.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Growth Log</span>
+                <span class="tag">Weekly Practice</span>
+                <span class="tag">Restraint</span>
+              </div>
+              <div class="action-row">
+                <button class="pill-btn like-btn">♡ Appreciate <span>15</span></button>
+                <button class="pill-btn">Encourage</button>
+                <button class="pill-btn">Archive</button>
+              </div>
+            </article>
+
+            <article class="post-card" data-category="scroll">
+              <div class="post-head">
+                <div class="post-user">
+                  <div class="avatar">R</div>
+                  <div>
+                    <strong>Rafael, Builder</strong>
+                    <span>Scroll Thread · The Refining</span>
+                  </div>
+                </div>
+                <div class="post-date">2 days ago</div>
+              </div>
+              <p class="post-body">
+                In “The Refining,” I sensed that pressure reveals structure. The fire does not create what is                 inside us; it makes it visible.
+                I would like to discuss how refinement works differently in public life versus private life.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Scroll Thread</span>
+                <span class="tag">The Refining</span>
+                <span class="tag">Transformation</span>
+              </div>
+              <div class="action-row">
+                <button class="pill-btn like-btn">♡ Appreciate <span>21</span></button>
+                <button class="pill-btn">Enter Thread</button>
+                <button class="pill-btn">Follow</button>
+              </div>
+            </article>
+          </div>
+        </div>
+-->
+
+        <aside class="sidebar-stack">
+          <section class="join-card" id="join-circle">
+            <div class="eyebrow">Membership Gateway</div>
+            <h3 style="margin-top:10px;">Join the CrownMind Circle</h3>
+            <p>Collect names and emails now, then connect this form to Netlify Forms, Formspree, or your own                backend later.</p>
+
+            <form class="join-form" name="crownmind-community" method="POST" data-netlify="true">
+              <input class="input" type="text" name="name" placeholder="Your name" required />
+              <input class="input" type="email" name="email" placeholder="Your email" required />
+              <select class="select" name="path">
+                <option value="">Choose your path</option>
+                <option>Seeker</option>
+                <option>Walker</option>
+                <option>Watcher</option>
+                <option>Builder</option>
+                <option>Teacher</option>
+              </select>
+              <textarea class="textarea" name="intention" placeholder="What brings you into the CrownMind                         community?"></textarea>
+              <button class="primary-btn" type="submit">Enter the Circle</button>
+            </form>
+          </section>
+
+
+          <section class="panel" id="community-rooms">
+            <div class="eyebrow">Core Rooms</div>
+            <h3 style="margin-top:10px;">Community chambers</h3>
+            <ul class="mini-list">
+              <li>
+                <div>
+                  <strong>The Circle</strong>
+                  <span>Main discussion flow for insights, questions, and thoughtful exchange.</span>
+                </div>
+                <div class="dot"></div>
+              </li>
+              <li>
+                <div>
+                  <strong>Reflection Studio</strong>
+                  <span>Members write responses to articles, prompts, and scroll teachings.</span>
+                </div>
+                <div class="dot"></div>
+              </li>
+              <li>
+                <div>
+                  <strong>Growth Logs</strong>
+                  <span>Private-to-public habit and inner-work tracker for meaningful progress.</span>
+                </div>
+                <div class="dot"></div>
+              </li>
+              <li>
+                <div>
+                  <strong>Silent Room</strong>
+                  <span>A sacred reading space with no comments — only presence and stillness.</span>
+                </div>
+                <div class="dot"></div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="prompt-card" id="weekly-prompt">
+            <div class="eyebrow">Prompt of the Week</div>
+            <h3 style="margin-top:10px;">What are you currently unlearning?</h3>
+            <p>
+              Write a reflection on a mindset, pattern, or false idea that is being removed from your life.
+              This can be turned into a featured weekly thread.
+            </p>
+            <div class="hero-actions" style="margin-top:16px;">
+              <a class="ghost-btn" href="#reflection-studio">Respond to Prompt</a>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="reflection-studio">
+      <div class="container layout-grid">
+        <section class="panel">
+          <div class="section-head" style="margin-bottom:12px;">
+            <div>
+              <div class="eyebrow">Reflection Studio</div>
+              <h2 class="section-title">Write into the community</h2>
+              <p>Use this composer as the front-end shell for future posting into your database or moderation                  workflow.</p>
+            </div>
+          </div>
+
+          <form class="compose-form" id="composeForm">
+            <input class="input" id="postTitle" type="text" placeholder="Title of your reflection or question"              required />
+            <div class="layout-grid" style="grid-template-columns: 1fr 1fr; gap: 12px;">
+              <select class="select" id="postCategory" required>
+                <option value="reflection">Reflection</option>
+                <option value="question">Discernment Question</option>
+                <option value="growth">Growth Log</option>
+                <option value="scroll">Scroll Thread</option>
+              </select>
+              <input class="input" id="postTags" type="text" placeholder="Tags, separated by commas" />
+            </div>
+            <textarea class="textarea" id="postBody" placeholder="Write your thoughts here..."              required></textarea>
+            <div class="action-row" style="border-top:0; padding-top:0; margin-top:0;">
+              <button class="primary-btn" type="submit">Publish Preview</button>
+              <button class="ghost-btn" type="reset">Clear</button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="panel" id="integration-notes">
+          <div class="eyebrow">Integration Notes</div>
+          <h3 style="margin-top:10px;">Backend-ready structure</h3>
+          <ul class="mini-list">
+            <li>
+              <div>
+                <strong>Form capture</strong>
+                <small>Connect the join form to Netlify Forms, Formspree, or Supabase Edge Functions.</small>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Community data</strong>
+                <small>Replace demo posts with data from <code>/api/community/posts</code>.</small>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Authentication</strong>
+                <small>Use Supabase Auth, Clerk, Firebase Auth, or your custom JWT login flow.</small>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Moderation</strong>
+                <small>Add approval states such as draft, pending, published, archived, and featured.</small>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="role-progression">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Role Progression</div>
+            <h2 class="section-title">Meaningful identity titles</h2>
+            <p>
+              These roles can be shown on profiles, granted manually, or tied to milestones such as reflections written,
+              growth logs completed, or community contributions.
+            </p>
+          </div>
+        </div>
+
+        <div class="badges-grid">
+          <article class="badge-card"><div class="badge-icon">◌</div><h3>Seeker</h3><p>New to the path, listening            closely, and beginning the work of honest reflection.</p></article>
+          <article class="badge-card"><div class="badge-icon">△</div><h3>Walker</h3><p>Practicing discipline and            steadily returning to truth in daily life.</p></article>
+          <article class="badge-card"><div class="badge-icon">◈</div><h3>Watcher</h3><p>Discerning deeply, seeing            patterns, and guarding clarity with care.</p></article>
+          <article class="badge-card"><div class="badge-icon">⬢</div><h3>Builder</h3><p>Helping shape the            community through service, structure, and active participation.</p></article>
+          <article class="badge-card"><div class="badge-icon">✧</div><h3>Aligned</h3><p>Living with visible            coherence between conviction, speech, and action.</p></article>
+          <article class="badge-card"><div class="badge-icon">✦</div><h3>Teacher</h3><p>Trusted to guide others            with depth, humility, and proven steadiness.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="featured-gateways">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Featured Gateways</div>
+            <h2 class="section-title">Entry points from the wider website</h2>
+            <p>
+              Use these cards to connect articles, scrolls, devotionals, courses, and future forums back into the               community system.
+            </p>
+          </div>
+        </div>
+
+        <div class="articles-grid">
+          <article class="article-card"><h3>Article Reflections</h3><p>Place a “Reflect on this article” button            under each post and route it here with the article title prefilled.</p></article>
+          <article class="article-card"><h3>Scroll Discussions</h3><p>Give each scroll page its own thread and            related member reflections for deeper thematic engagement.</p></article>
+          <article class="article-card"><h3>Prayer & Discernment</h3><p>Create guided spaces for requests, quiet            counsel, and carefully moderated spiritual conversations.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="community-events">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Live Gatherings</div>
+            <h2 class="section-title">Events and fellowship rhythm</h2>
+            <p>
+              These can later be connected to Google Calendar embeds, event forms, or member-only session pages.
+            </p>
+          </div>
+        </div>
+
+        <div class="events-grid">
+          <article class="event-card"><h3>Weekly Reflection Night</h3><p>Members gather to respond to one article, one prompt, and one question of discernment.</p><div class="tiny" style="margin-top:12px;">Every Friday · 8:00 PM</div></article>
+          <article class="event-card"><h3>Scroll Reading Circle</h3><p>A guided reading of one scroll chapter followed by a community thread and summary insight.</p><div class="tiny" style="margin-top:12px;">Every Saturday · 7:30 PM</div></article>
+          <article class="event-card"><h3>Silent Room Hour</h3><p>An intentional quiet hour with no replies, only reading, journaling, and inward stillness.</p><div class="tiny" style="margin-top:12px;">Every Sunday · 6:00 AM</div></article>
+        </div>
+
+        <div class="cta-banner" id="community-cta">
+          <div>
+            <div class="eyebrow">Next Expansion</div>
+            <h2 style="margin-top:10px; font-family: Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.4rem);">
+              Ready for Discord, private membership, or full backend integration.
+            </h2>
+            <p class="meta-line" style="margin-top:10px; max-width: 65ch;">
+              This page is already structured for launch as a premium-feeling front-end. You can now connect it to               comments,
+              user accounts, post storage, moderation, featured prompts, and member dashboards.
+            </p>
+          </div>
+          <div class="hero-actions" style="margin-top:0;">
+            <a class="primary-btn" href="mailto:hello@crownmind.example">Connect to Backend</a>
+            <a class="ghost-btn" href="/index.html">Back to Main Site</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-box">
+      <div>
+        <strong style="display:block; color: var(--text); margin-bottom: 6px;">CrownMind Institute</strong>
+        <span>A sanctuary for reflection, discernment, and inner transformation.</span>
+      </div>
+      <div>
+        <span>© 2026 CrownMind Institute. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/community.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>01 Header | CrownMind Community</title>
+  <link rel="stylesheet" href="../assets/css/community.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <div class="container">
+      <div class="eyebrow">Section 01</div>
+      <h2 class="page-title">Header / Primary Navigation</h2>
+      <p class="lead" style="margin-top:14px; line-height:1.8; max-width:72ch;">
+        This file isolates the top navigation so it can later become a reusable include, partial, or layout component.
+      </p>
+
+      <header class="topbar section-card" style="margin-top:22px; position:relative; top:auto;">
+        <div class="container nav">
+          <a class="brand" href="../full-index.html" aria-label="CrownMind Institute Home">
+            <div class="brand-mark">CM</div>
+            <div class="brand-text">
+              <strong>CrownMind Institute</strong>
+              <span>Community of reflection, growth, and aligned minds</span>
+            </div>
+          </a>
+
+          <nav class="nav-links" aria-label="Primary Navigation">
+            <a href="../full-index.html">Home</a>
+            <a href="#">Articles</a>
+            <a href="#">Scrolls</a>
+            <a href="#">The Circle</a>
+            <a href="#">Join</a>
+            <a class="primary-btn" href="#">Enter the Circle</a>
+          </nav>
+        </div>
+      </header>
+
+      <div class="code-note">
+        Suggested future path: move this into a shared partial such as <code>partials/header.html</code> or a layout component in your stack.
+      </div>
+    </div>
+  </main>
+</body>
+</html>
