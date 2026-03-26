@@ -7,14 +7,37 @@
   <link rel="stylesheet" href="../assets/css/community.css" />
 </head>
 <body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="/index.html" aria-label="CrownMind Institute Home">
+        <div class="brand-mark">CM</div>
+        <div class="brand-text">
+          <strong>CrownMind Institute</strong>
+          <span>Community of reflection, growth, and aligned minds</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="02-hero.html">Home</a>
+        <a href="https://crown-articles.netlify.app/">Articles</a>
+        <a href="https://crownmind.netlify.app/mission/scrolls/">Scrolls</a>
+        <a href="/sections/04-community-feed.html">The Circle</a>
+        <a href="/sections/06-join-circle.html">Join</a>
+        <a class="primary-btn" href="https://crownmind.netlify.app/">Return To CrownMind</a>
+      </nav>
+    </div>
+  </header>
+
   <main class="page-shell">
     <section class="section" id="reflection-studio">
-      <div class="container">
+      <div class="container" style="margin-top:-25px;">
         <div class="eyebrow">Section 05</div>
         <h2 class="page-title">Reflection Studio / Composer</h2>
-        <p class="lead" style="margin-top:14px; line-height:1.8; max-width:72ch;">
+
+<!--    <p class="lead" style="margin-top:14px; line-height:1.8; max-width:72ch;">
           This file isolates post creation preview behavior. It is the best section to connect first when you are ready for database writes.
         </p>
+-->
       </div>
       <div class="container layout-grid" style="margin-top:22px;">
         <section class="panel">
@@ -22,7 +45,9 @@
             <div>
               <div class="eyebrow">Reflection Studio</div>
               <h2 class="section-title">Write into the community</h2>
+<!--
               <p>Use this composer as the front-end shell for future posting into your database or moderation workflow.</p>
+-->
             </div>
           </div>
           <form class="compose-form" id="composeForm">
@@ -55,8 +80,10 @@
         </aside>
       </div>
       <div class="container">
+<!--
         <div class="code-note">Note: this standalone file includes the shared JavaScript, but preview posting needs a visible <code>#postStack</code> on the same page to prepend into a live feed. In your production build, pair this composer with the feed section or send data to a real endpoint.</div>
       </div>
+-->
     </section>
   <script src="../assets/js/community.js"></script>
   </main>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrownMind Admin | Join Circle Entries</title>
+  <link rel="stylesheet" href="assets/css/admin-community-join.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="side-panel">
+      <div>
+        <div class="brand-kicker">CrownMind Community</div>
+        <h1>Admin Gateway</h1>
+        <p class="muted">Protected review panel for Join Circle submissions.</p>
+      </div>
+
+      <section class="panel auth-panel" id="authPanel">
+        <h2>Admin Sign In</h2>
+        <p class="muted">Use your approved admin email. A magic link will be sent through Supabase Auth.</p>
+
+        <form id="adminLoginForm" class="stack-form">
+          <label>
+            <span>Admin email</span>
+            <input type="email" id="adminEmail" placeholder="you@example.com" required />
+          </label>
+          <button type="submit" class="btn btn-primary">Send Magic Link</button>
+        </form>
+
+        <div id="authStatus" class="status-box" aria-live="polite"></div>
+      </section>
+
+      <section class="panel session-panel hidden" id="sessionPanel">
+        <h2>Session</h2>
+        <p class="muted" id="sessionEmail">Signed in</p>
+        <div class="session-actions">
+          <button class="btn" id="refreshBtn" type="button">Refresh</button>
+          <button class="btn btn-danger" id="signOutBtn" type="button">Sign Out</button>
+        </div>
+      </section>
+    </aside>
+
+    <main class="main-panel">
+      <section class="panel hero-panel">
+        <div>
+          <div class="brand-kicker">Join Circle Oversight</div>
+          <h2>Submission Dashboard</h2>
+          <p class="muted">Review, filter, and update incoming community entries.</p>
+        </div>
+        <div id="mainStatus" class="status-inline"></div>
+      </section>
+
+      <section class="stats-grid" id="statsGrid">
+        <article class="stat-card"><span>Total</span><strong id="statTotal">0</strong></article>
+        <article class="stat-card"><span>New</span><strong id="statNew">0</strong></article>
+        <article class="stat-card"><span>Reviewed</span><strong id="statReviewed">0</strong></article>
+        <article class="stat-card"><span>Approved</span><strong id="statApproved">0</strong></article>
+        <article class="stat-card"><span>Archived</span><strong id="statArchived">0</strong></article>
+        <article class="stat-card"><span>Unique Emails</span><strong id="statUnique">0</strong></article>
+      </section>
+
+      <section class="panel filters-panel hidden" id="dashboardPanel">
+        <div class="filters-row">
+          <label>
+            <span>Search</span>
+            <input type="text" id="searchInput" placeholder="Search name, email, path, or intention" />
+          </label>
+
+          <label>
+            <span>Status</span>
+            <select id="statusFilter">
+              <option value="all">All statuses</option>
+              <option value="new">New</option>
+              <option value="reviewed">Reviewed</option>
+              <option value="approved">Approved</option>
+              <option value="archived">Archived</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Path</span>
+            <select id="pathFilter">
+              <option value="all">All paths</option>
+              <option value="seeker">Seeker</option>
+              <option value="walker">Walker</option>
+              <option value="watcher">Watcher</option>
+              <option value="builder">Builder</option>
+              <option value="aligned">Aligned</option>
+              <option value="teacher">Teacher</option>
+              <option value="unspecified">Unspecified</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Submitted</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Path</th>
+                <th>Intention</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="entriesTableBody">
+              <tr>
+                <td colspan="7" class="empty-state">Sign in to load entries.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/admin-community-join.js"></script>
+</body>
+</html>

@@ -3,82 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CrownMind Community | Modular Structure</title>
-  <meta name="description" content="Modular breakdown of the CrownMind Institute community page into scalable section files." />
+  <title>CrownMind Institute | Community</title>
+  <meta name="description" content="Enter the CrownMind Community — a sanctuary for reflection, discussion, growth logs, and aligned fellowship." />
   <link rel="stylesheet" href="assets/css/community.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="CrownMind Community Modular Home">
-        <div class="brand-mark">CM</div>
-        <div class="brand-text">
-          <strong>CrownMind Community</strong>
-          <span>Modular file architecture for scalable development</span>
-        </div>
-      </a>
-      <nav class="nav-links" aria-label="Modular Navigation">
-        <a href="sections/01-header.html">Header</a>
-        <a href="sections/02-hero.html">Hero</a>
-        <a href="sections/04-community-feed.html">Feed</a>
-        <a href="sections/05-reflection-studio.html">Studio</a>
-        <a class="primary-btn" href="full-index.html">Full Rebuilt Page</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="page-shell">
-    <div class="container">
-      <div class="eyebrow">Modular Build</div>
-      <h2 class="page-title">Your former index file has been split into major scalable sections.</h2>
-      <p class="lead" style="margin-top:14px; line-height:1.8; max-width:72ch;">
-        Each major area now has its own HTML file so the purpose of every block is clear and easier to expand.
-        Shared styling was moved into one CSS file and shared behavior into one JavaScript file.
-      </p>
+  <div id="hero"></div>
+  <div id="architecture"></div>
+  <div id="footer"></div>
 
-      <section class="section-card">
-        <h3>Recommended structure</h3>
-        <ul class="section-list">
-          <li><div><strong>assets/css/community.css</strong><span>All shared design tokens, layouts, components, and responsive rules.</span></div></li>
-          <li><div><strong>assets/js/community.js</strong><span>Feed filtering, like buttons, and composer preview logic.</span></div></li>
-          <li><div><strong>sections/01-header.html</strong><span>Top navigation and entry CTA.</span></div></li>
-          <li><div><strong>sections/02-hero.html</strong><span>Portal introduction, stats, quote, and live activity.</span></div></li>
-          <li><div><strong>sections/03-architecture.html</strong><span>Explains the three core community pillars.</span></div></li>
-          <li><div><strong>sections/04-community-feed.html</strong><span>Main feed, filters, sample posts, and sidebar modules.</span></div></li>
-          <li><div><strong>sections/05-reflection-studio.html</strong><span>Composer and backend integration notes.</span></div></li>
-          <li><div><strong>sections/06-role-progression.html</strong><span>Identity titles and progression cards.</span></div></li>
-          <li><div><strong>sections/07-featured-gateways.html</strong><span>Bridges articles, scrolls, and prayer spaces into community.</span></div></li>
-          <li><div><strong>sections/08-community-events.html</strong><span>Live gatherings, rhythm, and CTA banner.</span></div></li>
-          <li><div><strong>sections/09-footer.html</strong><span>Closing footer block.</span></div></li>
-          <li><div><strong>full-index.html</strong><span>Rebuilt full page using external CSS and JS for immediate deployment.</span></div></li>
-        </ul>
-      </section>
+  <script>
+    const components = {
+      hero: "sections/02-hero.html",
+      architecture: "sections/03-architecture.html"
+    };
 
-      <section class="section" style="padding-bottom:0;">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Section Files</div>
-            <h2 class="section-title">Open each section individually</h2>
-          </div>
-        </div>
-        <div class="modular-grid">
-          <a class="section-card" href="sections/01-header.html"><h3>01 Header</h3><p>Brand strip, main navigation, main CTA.</p></a>
-          <a class="section-card" href="sections/02-hero.html"><h3>02 Hero</h3><p>Main positioning message, stats, quote, activity cards.</p></a>
-          <a class="section-card" href="sections/03-architecture.html"><h3>03 Architecture</h3><p>Community pillars and feature cards.</p></a>
-          <a class="section-card" href="sections/04-community-feed.html"><h3>04 Community Feed</h3><p>Interactive feed, sidebar modules, filters, reactions.</p></a>
-          <a class="section-card" href="sections/05-reflection-studio.html"><h3>05 Reflection Studio</h3><p>Composer and integration notes.</p></a>
-          <a class="section-card" href="sections/06-role-progression.html"><h3>06 Role Progression</h3><p>Seeker to Teacher role cards.</p></a>
-          <a class="section-card" href="sections/07-featured-gateways.html"><h3>07 Featured Gateways</h3><p>Entry points from wider CrownMind properties.</p></a>
-          <a class="section-card" href="sections/08-community-events.html"><h3>08 Community Events</h3><p>Gatherings, rhythm, and CTA banner.</p></a>
-          <a class="section-card" href="sections/09-footer.html"><h3>09 Footer</h3><p>Simple shared footer block.</p></a>
-        </div>
-      </section>
+    Object.entries(components).forEach(([id, file]) => {
+      fetch(file)
+        .then(res => {
+          if (!res.ok) throw new Error(`Failed to load ${file}`);
+          return res.text();
+        })
+        .then(html => {
+          document.getElementById(id).innerHTML = html;
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById(id).innerHTML = "<p style='color:red;'>Failed to load section</p>";
+        });
+    });
+  </script>
 
-      <div class="code-note">
-        Best next step: convert these section files into reusable includes or components for your actual stack, whether plain HTML includes,
-        Netlify partials, Nunjucks, Astro, React, or server-rendered templates.
-      </div>
-    </div>
-  </main>
 </body>
-</html>
