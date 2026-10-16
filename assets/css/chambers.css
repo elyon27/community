@@ -1,0 +1,25 @@
+
+.chamber-main { max-width: 1100px; padding-top: 32px; }
+.chamber-heading { margin: 30px 0 24px; }
+.chamber-heading h1 { font-size: clamp(2rem, 5vw, 3.4rem); margin: 12px 0; }
+.chamber-heading p, .storage-note, .quiet-panel p { color: var(--muted); line-height: 1.8; }
+.chamber-nav, .chamber-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; }
+.chamber-nav a { padding: 12px 18px; border: 1px solid var(--line); border-radius: 24px; }
+.chamber-nav a[aria-current], .chamber-nav a:hover { color: var(--gold-2); background: rgba(214,179,106,.12); border-color: var(--gold); }
+.chamber-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 24px; }
+.chamber-main h2 { margin-bottom: 14px; font-size: 1.4rem; }
+#chamberForm label { display: block; margin: 22px 0 8px; font-weight: 600; }
+#chamberForm textarea { min-height: 120px; }
+#entryDate { color-scheme: dark; }
+.guidance { padding-left: 22px; color: var(--muted); line-height: 1.9; }
+.guidance li { margin-bottom: 16px; }
+.entry-preview { margin-top: 24px; }
+#entryPreview { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; line-height: 1.8; }
+.quiet-panel { text-align: center; padding: clamp(24px, 5vw, 64px); }
+.quiet-panel blockquote { font-family: Georgia, serif; font-size: clamp(1.6rem, 4vw, 2.6rem); line-height: 1.5; margin: 32px 0; }
+.quiet-panel .chamber-actions { justify-content: center; }
+.timer { font-size: 3rem; font-variant-numeric: tabular-nums; margin-top: 30px; color: var(--gold-2); }
+.chamber-footer { padding: 36px 0; color: var(--muted); text-align: center; }
+button, a { touch-action: manipulation; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 4px; }
+@media(max-width: 720px) { .chamber-grid { grid-template-columns: 1fr; } .chamber-nav a { flex: 1 1 42%; text-align: center; } .chamber-main .panel { padding: 22px; } }
