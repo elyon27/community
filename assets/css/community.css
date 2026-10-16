@@ -195,6 +195,19 @@ h1, h2, h3, h4, p { margin: 0; }
   transition: .2s ease;
 }
 
+/* Keep native dropdown menus readable on the dark membership form. */
+.join-form select.select {
+  color-scheme: dark;
+  background-color: #13212b;
+  color: #e6edf5;
+}
+
+.join-form select.select option,
+.join-form select.select optgroup {
+  background-color: #13212b;
+  color: #e6edf5;
+}
+
 .input:focus,
 .textarea:focus,
 .select:focus {
