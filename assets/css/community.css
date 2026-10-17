@@ -692,3 +692,12 @@ h1 {
 .chamber-link:hover { color: #fff; }
 .chamber-link:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 5px; }
 .mini-list .chamber-link span { display: inline; color: inherit; }
+
+/* A quieter welcome heading on the community homepage. */
+#community-hero .hero-card h1 {
+  font-size: clamp(1.75rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  font-weight: 500;
+  max-width: 24ch;
+  margin-top: 20px;
+}
