@@ -37,3 +37,12 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--gold-2); outlin
 .password-eye[aria-pressed="true"] .eye-slash { display: block; }
 .account-main .chamber-actions { gap: 10px; }
 @media (max-width: 480px) { .account-main .chamber-actions > button { flex: 1 1 100%; } }
+
+/* Keep the account title proportional to the compact sign-in form. */
+.account-main h1.chamber-heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.25;
+  max-width: none;
+  margin: 22px 0 20px;
+  font-weight: 600;
+}
