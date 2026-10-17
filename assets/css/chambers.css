@@ -25,3 +25,15 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--gold-2); outlin
 @media(max-width: 720px) { .chamber-grid { grid-template-columns: 1fr; } .chamber-nav a { flex: 1 1 42%; text-align: center; } .chamber-main .panel { padding: 22px; } }
 
 #accountForm label,#profileForm label,#passwordForm label {display:block;margin:18px 0 8px} .account-bar {display:flex;gap:16px;flex-wrap:wrap;align-items:center} #savedEntries article,#sharedEntries article {border-top:1px solid var(--line);padding:20px 0;overflow-wrap:anywhere} .entry-text {white-space:pre-wrap;line-height:1.7} button:disabled {opacity:.5;cursor:wait} #authMessage {margin-top:18px}
+/* Compact account form with matching email/password widths. */
+.account-main { max-width: 640px; padding-bottom: 32px; }
+.account-main .panel { padding: clamp(20px, 4vw, 32px); }
+.account-main .input { min-width: 0; width: 100%; }
+.account-main .password-field { position: relative; width: 100%; }
+.account-main .password-field .input { padding-right: 62px; }
+.account-main .password-eye { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 44px; height: 44px; padding: 0; background: transparent; color: var(--gold-2); border: 0; border-radius: 10px; cursor: pointer; }
+.password-eye:hover { background: rgba(214,179,106,.12); }
+.password-eye .eye-slash { display: none; }
+.password-eye[aria-pressed="true"] .eye-slash { display: block; }
+.account-main .chamber-actions { gap: 10px; }
+@media (max-width: 480px) { .account-main .chamber-actions > button { flex: 1 1 100%; } }
