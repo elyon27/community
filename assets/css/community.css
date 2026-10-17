@@ -701,3 +701,13 @@ h1 {
   max-width: 24ch;
   margin-top: 20px;
 }
+
+/* Official CrownMind logo, bundled locally for every community header. */
+.brand-logo {
+  display: block;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  object-fit: contain;
+  border-radius: 10px;
+}
