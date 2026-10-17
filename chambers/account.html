@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>My account | CrownMind Community</title><link rel="stylesheet" href="../assets/css/community.css"><link rel="stylesheet" href="../assets/css/chambers.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.8/dist/umd/supabase.js" defer></script><script src="../assets/js/community-client.js" defer></script><script src="../assets/js/community-account.js" defer></script></head><body><header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="/index.html" aria-label="CrownMind Institute Home">
+        <div class="brand-mark">CM</div>
+        <div class="brand-text">
+          <strong>CrownMind Institute</strong>
+          <span>Community of reflection, growth, and aligned minds</span>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="/index.html">Home</a>
+        <a href="https://crown-articles.netlify.app/">Articles</a>
+        <a href="https://crownmind.netlify.app/mission/scrolls/">Scrolls</a>
+        <a href="/sections/04-community-feed.html">The Circle</a>
+        <a href="/sections/06-join-circle.html">Join</a>
+        <a class="primary-btn" href="https://crownmind.netlify.app/">Return To CrownMind</a>
+      </nav>
+    </div>
+  </header><main class="container chamber-main"><a class="chamber-link" href="the-circle.html">← Enter the chambers</a><h1 class="chamber-heading">Your community account</h1><section class="panel"><p id="accountStatus" role="status">Checking account…</p><p>Use an email and password to save your entries across devices. A Membership Gateway submission is not a sign-in account.</p><form id="accountForm"><label for="accountEmail">Email</label><input class="input" id="accountEmail" type="email" autocomplete="email" required><label for="accountPassword">Password (at least 12 characters for a new account)</label><input class="input" id="accountPassword" type="password" autocomplete="current-password" required><div class="chamber-actions"><button class="primary-btn" type="submit">Sign in</button><button class="ghost-btn" type="button" id="createAccount">Create account</button><button class="ghost-btn" type="button" id="resetPassword">Forgot password</button></div></form><form id="profileForm" hidden><label for="displayName">Display name shown on shared posts</label><input class="input" id="displayName" maxlength="80" required><button class="primary-btn" type="submit">Save display name</button></form><form id="passwordForm" hidden><label for="newPassword">New password</label><input class="input" id="newPassword" type="password" autocomplete="new-password" minlength="12" required><button class="primary-btn" type="submit">Update password</button></form><button class="ghost-btn" id="signOut" hidden>Sign out</button><p id="authMessage" role="status" aria-live="polite"></p></section></main></body></html>

@@ -1,0 +1,66 @@
+CROWNMIND COMMUNITY — ACCOUNT STORAGE AND SHARED POSTING
+
+Status
+The website code is wired to the existing Community project:
+mzpuuukpqjmxezltekxy (the same project used by the Membership Gateway).
+The database setup has NOT been applied from this session: the connected
+Supabase account exposes only Crown-Articles and tenio-web-developer.
+Do not run this script in those other projects.
+
+1. Open the Community project in the Supabase dashboard.
+2. Open SQL Editor > New query. Paste the full contents of:
+   assets/sql/community-chambers-setup.sql
+   Run it once. It creates two new tables and ownership/security policies;
+   it does not change existing applications or admin approval records.
+   If a table already exists, stop and inspect its schema rather than deleting it.
+3. In Authentication, enable the Email sign-in provider and email confirmations.
+4. Under Authentication > URL Configuration:
+   Site URL: https://crownmind-community.netlify.app
+   Add both redirect URLs (Netlify may serve clean URLs):
+   https://crownmind-community.netlify.app/chambers/account.html
+   https://crownmind-community.netlify.app/chambers/account
+   If using a different domain, add its corresponding account URLs too.
+5. Configure your project's email delivery/SMTP as needed. Confirmation and
+   password-reset email delivery has not been tested in this session.
+6. Copy the updated package contents into your existing website repository
+   and deploy it. Visit /chambers/account.html to create a sign-in account,
+   confirm your email, sign in, and save a display name.
+7. Open any writing chamber. Save privately, or choose Share with members.
+   Growth Logs are private unless you explicitly choose to share.
+   Silent Room remains a quiet reading/timer page without public posting.
+
+Behavior
+- Applications submitted through Membership Gateway are not Auth accounts.
+- Email sign-in accounts can participate; this release does not gate them
+  on the separate admin application approval status.
+- Shared posts are visible to all signed-in email accounts, not visitors.
+- Display names are member-selected and are not verified identities.
+- Only the owner can edit/delete an entry or change its visibility.
+- Open/edit a shared entry and Save privately to remove it from shared lists.
+- New entry starts a separate record. Saving the current entry updates it.
+- Each chamber loads up to 100 recent personal and 100 shared entries.
+- Refresh entries fetches new posts; there is no continuous realtime polling.
+- Private data lives in Postgres behind row-level security. Passwords are
+  handled by Supabase Auth, not stored in community profile tables.
+- Shared posting currently has no moderation queue, comments, or attachments.
+- Download exports the current entry to a local text file.
+
+Live verification after setup
+Use two real test accounts, A and B, with confirmed emails.
+1. A: save a private entry; refresh and verify it remains.
+2. B: verify A's private entry is absent. Direct API select by A's entry ID
+   must return no rows; updates/deletes of that ID must affect no rows.
+3. A: share the same entry. B: refresh and verify it appears once.
+4. A: edit it and Save privately. B: refresh and verify it disappears.
+5. A: sign out; verify personal and shared lists clear and saves disable.
+6. Sign back in from a second browser/device and verify account storage.
+7. Test a password reset and confirm the recovery link opens the password form.
+8. Run the included verification SQL and Supabase Security Advisor.
+
+No live database writes, Auth emails, or deployment were performed here.
+
+Checks performed here: JavaScript syntax; local page/asset links; DOM
+integration with a mocked API for private save, share/update without
+duplication, making private, deletion, literal user-text rendering and
+sign-out clearing. Live RLS, database storage, email delivery and browser
+layout remain to be tested after deployment.

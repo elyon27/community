@@ -6,6 +6,7 @@ if (form) {
   date.value = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
   const title = document.querySelector('[data-chamber]').dataset.chamber;
   let dirty = false;
+  form.addEventListener('entry-saved', () => { dirty = false; });
   form.addEventListener('input', () => { dirty = true; });
   window.addEventListener('beforeunload', event => { if (dirty) { event.preventDefault(); event.returnValue = ''; } });
   function entry() {
