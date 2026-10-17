@@ -1,5 +1,5 @@
 // 🔥 CONFIG
-console.log("JOIN SCRIPT LOADED");
+
 
 const SUPABASE_URL = "https://mzpuuukpqjmxezltekxy.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16cHV1dWtwcWpteGV6bHRla3h5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzNzg5NzMsImV4cCI6MjA4OTk1NDk3M30.U8PBcRYo9p5J5yhyh0AGKS0t9hHJDPjgfAc47Mqs3_Y";
@@ -21,6 +21,14 @@ function showStatus(message, type = "info") {
   statusBox.className = `form-status ${type}`;
 }
 
+function addAccountLink() {
+  const link = document.createElement("a");
+  link.href = "/chambers/account.html";
+  link.className = "chamber-link";
+  link.textContent = "Open account page →";
+  statusBox.append(document.createElement("br"), link);
+}
+
 function normalizePath(value) {
   const allowed = ["seeker", "walker", "watcher", "builder", "aligned", "teacher", "unspecified"];
   const cleaned = String(value || "").trim().toLowerCase();
@@ -29,9 +37,7 @@ function normalizePath(value) {
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  console.log("FORM SUBMIT INTERCEPTED");
-
-  event.preventDefault();
+  if (submitBtn.disabled) return;
 
   const name = nameInput.value.trim();
   const email = emailInput.value.trim().toLowerCase();
@@ -44,27 +50,30 @@ form.addEventListener("submit", async (event) => {
   }
 
   submitBtn.disabled = true;
-  console.log("Submitting payload", { name, email, path, intention });
   showStatus("Submitting your entry...", "info");
   
 
   try {
     const payload = { name, email, path, intention };
 
-    const { data, error } = await supabaseClient
+    const { error } = await supabaseClient
       .from(TABLE_NAME)
-      .upsert(payload)
-      .select();
+      .insert(payload);
 
-    console.log("Supabase response:", { data, error });
 
     if (error) throw error;
 
-    showStatus("You have successfully entered the Circle.", "success");
+    showStatus("Your membership application has been submitted. Use the account page to create a sign-in account or sign in.", "success");
+    addAccountLink();
     form.reset();
   } catch (error) {
-    console.error("Join Circle submit error:", error);
-    showStatus(error.message || "Failed to submit entry.", "error");
+    if (error.code === "23505") {
+      showStatus("A membership application already exists for this email. Your existing application has been kept. To enter the chambers, sign in or create a sign-in account.", "info");
+      addAccountLink();
+    } else {
+      showStatus("We could not submit your application. Please try again later. If you already applied, use the account page to sign in.", "error");
+      addAccountLink();
+    }
   } finally {
     submitBtn.disabled = false;
   }
