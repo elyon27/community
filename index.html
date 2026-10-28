@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CrownMind Institute | Community</title>
   <meta name="description" content="Enter the CrownMind Community — a sanctuary for reflection, discussion, growth logs, and aligned fellowship." />
-  <link rel="stylesheet" href="assets/css/community.css?v=community-mobile-20261028" />
+  <link rel="stylesheet" href="assets/css/community.css?v=community-bible-20261028" />
 </head>
 <body>
 
@@ -20,7 +20,7 @@
     };
 
     Object.entries(components).forEach(([id, file]) => {
-      fetch(file + "?v=community-mobile-20261028", { cache: "no-cache" })
+      fetch(file + "?v=community-bible-20261028", { cache: "no-cache" })
         .then(res => {
           if (!res.ok) throw new Error(`Failed to load ${file}`);
           return res.text();
