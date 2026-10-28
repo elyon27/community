@@ -633,6 +633,27 @@ h1 {
 }
 
 @media (max-width: 720px) {
+  /* Let the tall, wrapped mobile navigation scroll with the page. */
+  .topbar { position: static; }
+
+  .brand-text { min-width: 0; }
+  .brand-text span { white-space: normal; overflow-wrap: anywhere; }
+  .nav-links { width: 100%; }
+
+  /* Keep section labels, titles and descriptions in reading order. */
+  .section-head {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .section-head > * { min-width: 0; max-width: 100%; }
+  .section-head .eyebrow { align-self: flex-start; }
+  .section-head p { margin-top: 0; }
+
+  /* Desktop offsets must not pull mobile content under the navigation. */
+  #community-hero .hero-grid,
+  #community-architecture { margin-top: 0 !important; }
+
   .nav {
     align-items: flex-start;
     flex-direction: column;
